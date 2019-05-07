@@ -6,9 +6,9 @@ pipeline {
     stages {
        stage('Build') {
           steps {
-             sh "'${mvnHome}/bin/mvn' -Dmaven.test.failure.ignore clean package"
+                sh 'mvn clean package'
              }
-       }
+          }
        stage('Results') {
           steps {
           archiveArtifacts 'target/jenkins-test-0.0.1-SNAPSHOT.jar'
