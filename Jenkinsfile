@@ -16,10 +16,10 @@ pipeline {
             archiveArtifacts 'target/jenkins-test-0.0.1-SNAPSHOT.jar'
           }
        }
-       stage('clean workspace') {
-          steps {
-            deleteDir()
-          }
+    }
+    post {
+       success{
+          deleteDir()
        }
     }
 }
