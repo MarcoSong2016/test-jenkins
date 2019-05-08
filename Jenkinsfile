@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        label 'centos_group'
+    }
     tools {
        maven 'M3'
     }
